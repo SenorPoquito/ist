@@ -18,6 +18,11 @@ Route::get('/', function () {
 
 
 
+//Route rewrite with slug
+
+Route::bind('schools',function($value,$route){
+  return App\School::whereSlug($value)->first();
+});
 
 //Resrouce Bindings
 Route::resource('schools','SchoolController');

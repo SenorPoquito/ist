@@ -14,7 +14,20 @@ class CreateSchoolsTable extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->default('');
+            $table->string('slug')->default('');
+            $table->string('city')->default('Tokyo');
+            $table->string('ward')->default('');
+            $table->string('genders')->default('Coed');
+            $table->string('language')->default('English');
+            $table->string('grades')->default('Kindergarten');
+            $table->string('term')->default('September');
+            $table->string('description')->default('');
+            $table->string('programFees')->default('');
+            $table->string('address')->default('');
+            $table->string('otherFees')->default('');
+            $table->datetime('created');
+            $table->datetime('updated');
             $table->timestamps();
         });
     }
