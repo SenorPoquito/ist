@@ -53,7 +53,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index-google-map-fullscreen.html"><img height="65px" src="{{ asset('img/logo.png')}}" alt="brand"></a>
+                        <a href="{{ URL::route('schools.index') }}"><img height="65px" src="{{ asset('img/logo.png')}}" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
@@ -86,11 +86,18 @@
     </div><!-- /.navigation -->
 
     <!-- Page Content -->
+		<div class="container">
+		    <div class="row">
+		        <div class="col-md-9 col-sm-9">
+
+
     <div id="page-content">
       @yield('content')
     </div>
     <!-- end Page Content -->
-
+	</div>
+	</div>
+	</div>
     <!-- Page Footer -->
     <footer id="page-footer">
         <div class="inner">
