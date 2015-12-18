@@ -1685,6 +1685,7 @@ ul.list-links li a:hover {
   border-bottom: 2px solid #f3f3f3;
   padding-left: 280px;
   padding-bottom: 30px;
+  padding-top: 30px;
   position: relative;
   overflow: visible;
 }

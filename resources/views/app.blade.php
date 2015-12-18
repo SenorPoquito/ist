@@ -72,7 +72,7 @@
 							<li class="has-child"><a href="#">Wards</a>
 								<ul class="child-navigation">
 									@foreach ( $wards as $ward)
-									<li><a href="property-detail.html">{{$ward->name}}</a></li>
+									<li><a href="{{ route('wards.show', [$ward->slug]) }}">{{$ward->name}}</a></li>
 									@endforeach
 								</ul>
 							</li>
@@ -82,7 +82,7 @@
 							<li class="has-child"><a href="#">Grades</a>
 								<ul class="child-navigation">
 									@foreach ( $grades as $grade)
-									<li><a href="property-detail.html">{{$grade->name}}</a></li>
+									<li><a href="{{ route('grades.show', [$grade->slug]) }}">{{$grade->name}}</a></li>
 									@endforeach
 								</ul>
 							</li>

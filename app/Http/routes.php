@@ -12,7 +12,8 @@
 */
 
 use App\School;
-
+use App\Grade;
+use App\Ward;
 //Route Definitions
 // work page (app/views/work.blade.php)
   Route::get('/', array('as' => 'home', function()
@@ -23,6 +24,7 @@ use App\School;
 //Model Bindings
 Route::model('schools','School');
 Route::model('wards','Ward');
+Route::model('grades','Grade');
 
 //Route rewrite with slug
 Route::bind('schools',function($value,$route){
@@ -31,7 +33,11 @@ Route::bind('schools',function($value,$route){
 Route::bind('wards',function($value,$route){
   return Ward::whereSlug($value)->first();
 });
+Route::bind('grades',function($value,$route){
+  return Grade::whereSlug($value)->first();
+});
 
 //Resrouce Bindings
 Route::resource('schools','SchoolController');
 Route::resource('wards','WardController');
+Route::resource('grades','GradeController');

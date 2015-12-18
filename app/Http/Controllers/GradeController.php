@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Ward;
 
-class WardController extends Controller
+class GradeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,7 @@ class WardController extends Controller
      */
     public function index()
     {
-      //
-      //$wards = Ward::all();
-      return view('wards.index');
+        //
     }
 
     /**
@@ -46,23 +43,22 @@ class WardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  Ward $ward
+     * @param  int  Grade $grade
      * @return \Illuminate\Http\Response
      */
-    public function show(Ward $ward)
+    public function show(Grade $grade)
     {
         //
-        $schools = $ward->schools;
-        return view('schools.index',compact('schools'));
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  Ward $ward
+     * @param  int  Grade $grade
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ward $ward)
+    public function edit(Grade $grade)
     {
         //
     }
@@ -71,10 +67,10 @@ class WardController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  Ward $ward
+     * @param  int  Grade $grade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ward $ward)
+    public function update(Request $request, Grade $grade)
     {
         //
     }
@@ -82,10 +78,10 @@ class WardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  Ward $ward
+     * @param  int  Grade $grade
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ward $ward)
+    public function destroy(Grade $grade)
     {
         //
     }
