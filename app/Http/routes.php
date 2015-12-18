@@ -11,21 +11,24 @@
 |
 */
 
+use App\School;
+
 //Route Definitions
-Route::get('/', function () {
-    return view('welcome');
-});
+// work page (app/views/work.blade.php)
+  Route::get('/', array('as' => 'home', function()
+  {
+      return View::make('index');
+  }));
 
 
+
+//Model Bindings
+Route::model('schools','School');
 
 //Route rewrite with slug
-
 Route::bind('schools',function($value,$route){
-  return App\School::whereSlug($value)->first();
+  return School::whereSlug($value)->first();
 });
 
 //Resrouce Bindings
 Route::resource('schools','SchoolController');
-
-//Model Bindings
-Route::model('schools','School');
