@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\School;
+use App\Providers\AppServiceProvider;
 
 class SchoolController extends Controller
 {
@@ -52,7 +53,16 @@ class SchoolController extends Controller
      */
     public function show(School $school)
     {
-        //
+        $tempValue = session()->get('recentSchools1');
+        session()->put('recentSchools2', $tempValue);
+      
+      session()->put('recentSchools1', $school);
+
+
+        // $recentSchools[1]=$recentSchools[0];
+        // $recentSchools[0]=$school;
+        // //session(['recentSchools'=>'recent']);
+
         return view('schools.show', compact('school'));
     }
 

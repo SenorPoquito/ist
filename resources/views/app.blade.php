@@ -142,11 +142,11 @@
 											</div>
 										</a>
 										<div class="info">
-											<a href="property-detail.html">
-												<h4>2186 Rinehart Road</h4>
+											<a href="{{ route('schools.show', [session()->get('recentSchools2')->slug]) }}">
+												<h4>{{session()->get('recentSchools2')->name}}</h4>
 											</a>
-											<figure>Doral, FL 33178 </figure>
-											<div class="tag price">$ 72,000</div>
+											<figure>{{session()->get('recentSchools2')->ward->name}}</figure>
+											<div class="tag price">Add</div>
 										</div>
 									</div>
 									<!-- /.property -->
@@ -157,11 +157,11 @@
 											</div>
 										</a>
 										<div class="info">
-											<a href="property-detail.html">
-												<h4>2479 Murphy Court</h4>
+											<a href="{{ route('schools.show', [session()->get('recentSchools2')->slug]) }}">
+												<h4>{{session()->get('recentSchools1')->name}}</h4>
 											</a>
-											<figure>Minneapolis, MN 55402</figure>
-											<div class="tag price">$ 36,000</div>
+											<figure>{{session()->get('recentSchools1')->ward->name}}</figure>
+											<div class="tag price">Add</div>
 										</div>
 									</div>
 									<!-- /.property -->

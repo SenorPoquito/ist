@@ -12,13 +12,13 @@
             <div class="property">
            <!-- <figure class="type" title="Apartment"><img src="assets/img/property-types/apartment.png" alt=""></figure> -->
            <div class="property-image">
-               <a href="property-detail.html">
+               <a href="{{ route('schools.show', [$school->slug]) }}">
                    <img height:"330px" alt="" src="{{ asset('img/property-02.jpg')}}">
                </a>
            </div>
            <div class="info">
                <header>
-                   <a href="property-detail.html"><h3>{{$school->name}}</h3></a>
+                   <a href="{{ route('schools.show', [$school->slug]) }}"><h3>{{$school->name}}</h3></a>
                    <figure>{{$school->ward->name}}-ku</figure>
                </header>
 
