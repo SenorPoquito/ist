@@ -157,7 +157,7 @@
 											</div>
 										</a>
 										<div class="info">
-											<a href="{{ route('schools.show', [session()->get('recentSchools2')->slug]) }}">
+											<a href="{{ route('schools.show', [session()->get('recentSchools1')->slug]) }}">
 												<h4>{{session()->get('recentSchools1')->name}}</h4>
 											</a>
 											<figure>{{session()->get('recentSchools1')->ward->name}}</figure>

@@ -54,10 +54,11 @@ class SchoolController extends Controller
     public function show(School $school)
     {
         $tempValue = session()->get('recentSchools1');
+        if($tempValue->id != $school->id){
         session()->put('recentSchools2', $tempValue);
-      
-      session()->put('recentSchools1', $school);
 
+        session()->put('recentSchools1', $school);
+        }
 
         // $recentSchools[1]=$recentSchools[0];
         // $recentSchools[0]=$school;
