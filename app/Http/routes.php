@@ -20,15 +20,18 @@ use App\School;
       return View::make('index');
   }));
 
-
-
 //Model Bindings
 Route::model('schools','School');
+Route::model('wards','Ward');
 
 //Route rewrite with slug
 Route::bind('schools',function($value,$route){
   return School::whereSlug($value)->first();
 });
+Route::bind('wards',function($value,$route){
+  return Ward::whereSlug($value)->first();
+});
 
 //Resrouce Bindings
 Route::resource('schools','SchoolController');
+Route::resource('wards','WardController');

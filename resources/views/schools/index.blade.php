@@ -19,7 +19,7 @@
            <div class="info">
                <header>
                    <a href="property-detail.html"><h3>{{$school->name}}</h3></a>
-                   <figure>{{$school->ward}}-ku</figure>
+                   <figure>{{$school->ward->name}}-ku</figure>
                </header>
 
                <div class="tag price">Add to List</div>

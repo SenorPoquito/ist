@@ -5,7 +5,7 @@
 <section id="property-detail">
                      <header class="property-title">
                          <h1>{{$school->name}}</h1>
-                         <figure>{{$school->ward}}-ku</figure>
+                         <figure>{{$school->ward->name}}-ku</figure>
                          <span class="actions">
                              <!--<a href="#" class="fa fa-print"></a>-->
                              <a href="#" class="bookmark" data-bookmark-state="empty"><span class="title-add">Add to List</span><span class="title-added">Added</span></a>

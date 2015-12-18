@@ -67,24 +67,26 @@
 					</div>
 					<nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
 						<ul class="nav navbar-nav">
-							<!-- <li class="active"><a href="#">Homepage</a>
-							</li> -->
+							@if ( !$wards->count() )
+					    @else
 							<li class="has-child"><a href="#">Wards</a>
 								<ul class="child-navigation">
-									<li><a href="property-detail.html">Minato</a></li>
-									<li><a href="properties-listing.html">Chiyoda</a></li>
-									<li><a href="properties-listing-grid.html">Chuo</a></li>
-									<li><a href="properties-listing-lines.html">Shinjuku</a></li>
+									@foreach ( $wards as $ward)
+									<li><a href="property-detail.html">{{$ward->name}}</a></li>
+									@endforeach
 								</ul>
 							</li>
+							@endif
+							@if ( !$grades->count() )
+							@else
 							<li class="has-child"><a href="#">Grades</a>
 								<ul class="child-navigation">
-									<li><a href="property-detail.html">Pre-K</a></li>
-									<li><a href="properties-listing.html">Kindergarten</a></li>
-									<li><a href="properties-listing-grid.html">Elementary</a></li>
-									<li><a href="properties-listing-lines.html">Shinjuku</a></li>
+									@foreach ( $grades as $grade)
+									<li><a href="property-detail.html">{{$grade->name}}</a></li>
+									@endforeach
 								</ul>
 							</li>
+							@endif
 							<li><a href="submit.html">Submit</a></li>
 
 							<li><a href="contact.html">Contact</a></li>
