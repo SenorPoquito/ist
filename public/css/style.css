@@ -2323,7 +2323,7 @@ ul.list-links li a:hover {
   P
 ****/
 #page-content {
-      padding-top: 120px;
+  padding-top: 120px;
   padding-bottom: 10px;
   position: relative;
 }
@@ -3033,6 +3033,15 @@ ul.list-links li a:hover {
 .show-on-map .fa {
   color: #1396e2;
   font-size: 24px;
+}
+
+/*.container{
+  width:100%;
+}*/
+
+
+#sidebar {
+  padding-top: 120px;
 }
 
 #sidebar aside {

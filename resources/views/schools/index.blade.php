@@ -28,8 +28,11 @@
                    <p>{{$school->description}}
                    </p>
                    <dl>
-                       <dt>Grade</dt>
-                           <dd>{{$school->ages}}</dd>
+                       <dt>Grades</dt>
+                           <dd>@foreach( $school->ages as $age )
+                             <span class="label label-primary">{{$age->name}}</span>
+                             @endforeach</dd>
+
                        <dt>Term Start</dt>
                            <dd>{{$school->term}}</dd>
                        <dt>Gender</dt>

@@ -37,27 +37,35 @@
                          <div class="col-md-4 col-sm-12">
                              <section id="quick-summary" class="clearfix">
                                  <header><h2>Quick Summary</h2></header>
+
+
+                                     <dl>
+                                         <dt>Grades</dt>
+                                             <dd>@foreach( $school->ages as $age )
+                                               <span class="label label-primary">{{$age->name}}</span>
+                                               @endforeach</dd>
+
+                                         <dt>Term Start</dt>
+                                             <dd>{{$school->term}}</dd>
+                                         <dt>Gender</dt>
+                                             <dd>{{$school->genders}}</dd>
+                                     </dl>
+
+
                                  <dl>
-                                     <dt>Grade</dt>
-                                         <dd>{{$school->grades}}</dd>
-                                     <dt>Term Start</dt>
-                                         <dd>{{$school->term}}</dd>
-                                     <dt>Gender</dt>
-                                         <dd>{{$school->genders}}</dd>
-                                 </dl>
                              </section><!-- /#quick-summary -->
                          </div><!-- /.col-md-4 -->
                          <div class="col-md-8 col-sm-12">
                              <section id="description">
-                                 <header><h2>Property Description</h2></header>
+                                 <header><h2>School Description</h2></header>
                                  <p>
                                      {{$school->description}}
                                  </p>
 
                              </section><!-- /#description -->
                              <section id="property-features">
-                                 <header><h2>Property Description</h2></header>
-                                 <ul class="list-unstyled property-features-list">
+                                 <header><h2>School Programs and Fees</h2></header>
+                                 <!-- <ul class="list-unstyled property-features-list">
                                      <li>Sauna</li>
                                      <li>Fireplace or fire pit</li>
                                      <li>Outdoor Kitchen</li>
@@ -66,7 +74,8 @@
                                      <li>Sun Room</li>
                                      <li>Family Room</li>
                                      <li>Concrete Flooring</li>
-                                 </ul>
+                                 </ul> -->
+                                 {{$school->programFees}}
                              </section><!-- /#property-features -->
                              <section id="property-map">
                                  <header><h2>Map</h2></header>

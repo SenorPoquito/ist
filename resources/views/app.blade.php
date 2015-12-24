@@ -67,19 +67,16 @@
 					</div>
 					<nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
 						<ul class="nav navbar-nav">
-							@if ( !$areas->count() )
-					    @else
-							<li class="has-child"><a href="#">areas</a>
+							@if ( !$areas->count() ) @else
+							<li class="has-child"><a href="#">Wards</a>
 								<ul class="child-navigation">
 									@foreach ( $areas as $area)
 									<li><a href="{{ route('areas.show', [$area->slug]) }}">{{$area->name}}</a></li>
 									@endforeach
 								</ul>
 							</li>
-							@endif
-							@if ( !$ages->count() )
-							@else
-							<li class="has-child"><a href="#">ages</a>
+							@endif @if ( !$ages->count() ) @else
+							<li class="has-child"><a href="#">Grades</a>
 								<ul class="child-navigation">
 									@foreach ( $ages as $age)
 									<li><a href="{{ route('ages.show', [$age->slug]) }}">{{$age->name}}</a></li>
@@ -110,77 +107,123 @@
 					<div id="page-content">
 						@yield('content')
 					</div>
+				</div>
+				<div class="col-md-3 col-sm-3">
+					<div id="sidebar" class="sidebar">
 
+						<aside id="zoner-wsp-2" class="widget search-property">
+							<h3 class="widget-title">Search Properties</h3>
+							<form role="form" id="form-sidebar" class="form-search" action="" method="GET">
+								<input type="hidden" id="filter_property" name="filter_property" value="7add8c389c">
+								<div class="form-group">
+									<input type="text" class="form-control" id="sb-keyword" name="sb-keyword" value="" placeholder="Keyword">
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" id="sb-zip" name="sb-zip" value="" placeholder="Zip Code">
+								</div>
+								<div class="form-group">
+									<select id="property_status" class="property_status" name="sb-status" style="display: none;">
+										<option value="">Status</option>
+										<option value="22">Rent (8)</option>
+										<option value="21">Sale (25)</option>
+									</select>
+								</div>
+								<!-- /.form-group -->
+								<div class="form-group">
+									<select id="property_type" class="property_type" name="sb-type" style="display: none;">
+										<option value="">Type</option>
+										<option value="24">Apartment (9)</option>
+										<option value="25">Condominium (6)</option>
+										<option value="26">Cottage (6)</option>
+										<option value="29">Family House (4)</option>
+										<option value="27">Flat (6)</option>
+										<option value="40">House (3)</option>
+										<option value="30">Single Home (2)</option>
+										<option value="31">Villa (1)</option>
+									</select>
+								</div>
+								<!-- /.form-group -->
+									<div class="form-group">
+										<button type="submit" class="btn btn-default">Search Now</button>
+									</div>
+									<!-- /.form-group -->
+									<!-- /#form-map -->
+								</div>
+							</form>
+						</aside>
+					</div>
 				</div>
 			</div>
+
+			<!-- Page Footer -->
+			<footer id="page-footer">
+				<div class="inner">
+					<aside id="footer-main">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<article>
+										<h3>About Us</h3>
+										<p>Vel fermentum ipsum. Suspendisse quis molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque aliquet a metus in aliquet. Praesent ut turpis posuere, commodo odio id, ornare tortor
+										</p>
+										<hr>
+										<a href="#" class="link-arrow">Read More</a>
+									</article>
+								</div>
+								<!-- /.col-sm-4 -->
+
+								<!-- /.col-sm-4 -->
+								<div class="col-md-4 col-sm-4">
+									<article>
+										<h3>Contact</h3>
+										<address>
+											<strong>International Schools Tokyo</strong>
+											<br> Sanno Park Tower
+											<br> Tameikesanno, 105-0001
+										</address>
+										+81-80-2231-2233
+										<br>
+										<a href="mailto:contact@international-schools-tokyo.com">Email</a>
+									</article>
+								</div>
+								<!-- /.col-sm-4 -->
+								<div class="col-md-4 col-sm-4">
+									<article>
+										<h3>Useful Links</h3>
+										<ul class="list-unstyled list-links">
+											<li><a href="{{ URL::route('schools.index') }}">All Schools</a></li>
+											<li><a href="#">Privacy Policy</a></li>
+											<!-- <li><a href="#">Login and Register Account</a></li> -->
+											<li><a href="#">FAQ</a></li>
+											<li><a href="#">Terms and Conditions</a></li>
+										</ul>
+									</article>
+									<div class="col-md-1 col-sm-1">
+
+									</div>
+								</div>
+								<!-- /.col-sm-3 -->
+							</div>
+							<!-- /.row -->
+						</div>
+						<!-- /.container -->
+					</aside>
+					<!-- /#footer-main -->
+					<aside id="footer-thumbnails" class="footer-thumbnails"></aside>
+					<!-- /#footer-thumbnails -->
+					<aside id="footer-copyright">
+						<div class="container">
+							<span>Copyright International Schools Tokyo© 2015. All Rights Reserved.</span>
+							<span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
+						</div>
+					</aside>
+				</div>
+				<!-- /.inner -->
+			</footer>
+			<!-- end Page Footer -->
+
 		</div>
 		<!-- end Page Content -->
-
-		<!-- Page Footer -->
-		<footer id="page-footer">
-			<div class="inner">
-				<aside id="footer-main">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-3 col-sm-3">
-								<article>
-									<h3>About Us</h3>
-									<p>Vel fermentum ipsum. Suspendisse quis molestie odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque aliquet a metus in aliquet. Praesent ut turpis posuere, commodo odio id, ornare tortor
-									</p>
-									<hr>
-									<a href="#" class="link-arrow">Read More</a>
-								</article>
-							</div>
-							<!-- /.col-sm-3 -->
-							<div class="col-md-3 col-sm-3">
-							</div>
-							<!-- /.col-sm-3 -->
-							<div class="col-md-3 col-sm-3">
-								<article>
-									<h3>Contact</h3>
-									<address>
-										<strong>International Schools Tokyo</strong>
-										<br> Sanno Park Tower
-										<br> Tameikesanno, 105-0001
-									</address>
-									+81-80-2231-2233
-									<br>
-									<a href="mailto:contact@international-schools-tokyo.com">Email</a>
-								</article>
-							</div>
-							<!-- /.col-sm-3 -->
-							<div class="col-md-3 col-sm-3">
-								<article>
-									<h3>Useful Links</h3>
-									<ul class="list-unstyled list-links">
-										<li><a href="{{ URL::route('schools.index') }}">All Schools</a></li>
-										<li><a href="#">Privacy Policy</a></li>
-										<!-- <li><a href="#">Login and Register Account</a></li> -->
-										<li><a href="#">FAQ</a></li>
-										<li><a href="#">Terms and Conditions</a></li>
-									</ul>
-								</article>
-							</div>
-							<!-- /.col-sm-3 -->
-						</div>
-						<!-- /.row -->
-					</div>
-					<!-- /.container -->
-				</aside>
-				<!-- /#footer-main -->
-				<aside id="footer-thumbnails" class="footer-thumbnails"></aside>
-				<!-- /#footer-thumbnails -->
-				<aside id="footer-copyright">
-					<div class="container">
-						<span>Copyright International Schools Tokyo© 2015. All Rights Reserved.</span>
-						<span class="pull-right"><a href="#page-top" class="roll">Go to top</a></span>
-					</div>
-				</aside>
-			</div>
-			<!-- /.inner -->
-		</footer>
-		<!-- end Page Footer -->
-	</div>
 
 	<div id="overlay"></div>
 
