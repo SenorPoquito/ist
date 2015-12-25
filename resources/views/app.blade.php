@@ -71,7 +71,9 @@
 							<li class="has-child"><a href="#">Wards</a>
 								<ul class="child-navigation">
 									@foreach ( $areas as $area)
-									<li><a href="{{ route('areas.show', [$area->slug]) }}">{{$area->name}}</a></li>
+									@if (count($area->schools)>0)
+									<li><a href="{{ route('areas.show', [$area->slug]) }}">{{$area->name}}  ({{count($area->schools)}})</a></li>
+									@endif
 									@endforeach
 								</ul>
 							</li>
@@ -79,7 +81,9 @@
 							<li class="has-child"><a href="#">Grades</a>
 								<ul class="child-navigation">
 									@foreach ( $ages as $age)
-									<li><a href="{{ route('ages.show', [$age->slug]) }}">{{$age->name}}</a></li>
+									@if (count($age->schools)>0)
+									<li><a href="{{ route('ages.show', [$age->slug]) }}">{{$age->name}}  ({{count($age->schools)}})</a></li>
+									@endif
 									@endforeach
 								</ul>
 							</li>
@@ -112,34 +116,29 @@
 					<div id="sidebar" class="sidebar">
 
 						<aside id="zoner-wsp-2" class="widget search-property">
-							<h3 class="widget-title">Search Properties</h3>
+							<h3 class="widget-title">Search Schools</h3>
 							<form role="form" id="form-sidebar" class="form-search" action="" method="GET">
 								<input type="hidden" id="filter_property" name="filter_property" value="7add8c389c">
 								<div class="form-group">
-									<input type="text" class="form-control" id="sb-keyword" name="sb-keyword" value="" placeholder="Keyword">
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control" id="sb-zip" name="sb-zip" value="" placeholder="Zip Code">
-								</div>
-								<div class="form-group">
 									<select id="property_status" class="property_status" name="sb-status" style="display: none;">
-										<option value="">Status</option>
-										<option value="22">Rent (8)</option>
-										<option value="21">Sale (25)</option>
+										<option value="">Grade</option>
+										@foreach ( $ages as $age)
+										@if (count($age->schools)>0)
+									<option value="{{$age->slug}}">{{$age->name}}</option>
+									@endif
+										@endforeach
 									</select>
 								</div>
 								<!-- /.form-group -->
 								<div class="form-group">
 									<select id="property_type" class="property_type" name="sb-type" style="display: none;">
-										<option value="">Type</option>
-										<option value="24">Apartment (9)</option>
-										<option value="25">Condominium (6)</option>
-										<option value="26">Cottage (6)</option>
-										<option value="29">Family House (4)</option>
-										<option value="27">Flat (6)</option>
-										<option value="40">House (3)</option>
-										<option value="30">Single Home (2)</option>
-										<option value="31">Villa (1)</option>
+
+										<option value="">Ward</option>
+										@foreach ( $areas as $area)
+										@if (count($area->schools)>0)
+										<option value="{{$area->slug}}">{{$area->name}}</option>
+										@endif
+										@endforeach
 									</select>
 								</div>
 								<!-- /.form-group -->
