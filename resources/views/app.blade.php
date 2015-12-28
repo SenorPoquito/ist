@@ -88,14 +88,14 @@
 								</ul>
 							</li>
 							@endif
-							<li><a href="submit.html">Submit</a></li>
+							<li><a href="{{ URL::route('submit.index') }}">Submit</a></li>
 
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>
 					<!-- /.navbar collapse-->
 					<div class="add-your-property">
-						<a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
+						<a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your School</span></a>
 					</div>
 				</header>
 				<!-- /.navbar -->
@@ -112,9 +112,10 @@
 						@yield('content')
 					</div>
 				</div>
+
+
 				<div class="col-md-3 col-sm-3">
 					<div id="sidebar" class="sidebar">
-
 						<aside id="zoner-wsp-2" class="widget search-property">
 							<h3 class="widget-title">Search Schools</h3>
 							<form role="form" id="form-sidebar" class="form-search" action="" method="GET">
@@ -150,6 +151,19 @@
 								</div>
 							</form>
 						</aside>
+						<aside id="our-guides">
+								<header><h3>Our Guides</h3></header>
+								<a href="#" class="universal-button">
+										<figure class="fa fa-info"></figure>
+										<span>What are International Schools?</span>
+										<span class="arrow fa fa-angle-right"></span>
+								</a><!-- /.universal-button -->
+								<a href="#" class="universal-button">
+										<figure class="fa fa-compass"></figure>
+										<span>Choosing the Right School</span>
+										<span class="arrow fa fa-angle-right"></span>
+								</a><!-- /.universal-button -->
+						</aside><!-- /#our-guide -->
 					</div>
 				</div>
 			</div>

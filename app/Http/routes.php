@@ -43,3 +43,4 @@ Route::bind('ages',function($value,$route){
 Route::resource('schools','SchoolController');
 Route::resource('areas','AreaController');
 Route::resource('ages','AgeController');
+Route::resource('submit','SubmitController');
